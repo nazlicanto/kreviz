@@ -1,0 +1,26 @@
+{% load static %}
+
+{% block content %}
+<style>
+body {
+    background-image: url("{% static 'images/profile.png' %}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        
+    }
+
+</style>
+<h2>Profile</h2>
+<ul>
+    <h1>{{ user_profile.username }}</h1>
+    <p>Email: {{ user_profile.email }}</p>
+    <p>Interests: 
+        {% for interest in user_profile.interests.all %}
+            {{ interest.name }}
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+</ul>
+{% endblock %}

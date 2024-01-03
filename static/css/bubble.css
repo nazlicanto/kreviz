@@ -1,0 +1,89 @@
+/* Chat Icon Container */
+#chat {
+    max-width: 300px;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border: 1px solid #D1D5DB; /* Gray border */
+    border-radius: 0.75rem; /* Rounded corners */
+}
+
+/* Chat Icon */
+#chat_icon {
+    display: flex;
+    align-items: center;
+    width: 50px;
+}
+
+/* Chat Open Button */
+#chat_open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SVG Icon inside Button */
+#chat_open svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+/* Chat Bubble */
+#chat-bubble {
+    display: none; /* Hidden by default */
+    background-color: white; /* Assuming a white background */
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for pop effect */
+}
+
+/* Chat Bubble Header */
+.chat-bubble-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem; /* Space between header and content */
+}
+
+/* Close Button */
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Chat Content */
+.chat-content {
+    margin-bottom: 1rem; /* Space between content and input */
+}
+
+/* Chat Input Form */
+#private-chat-form {
+    display: flex;
+    gap: 0.5rem; /* Space between input and button */
+}
+
+/* Chat Input Text Field */
+#private-chat-message-input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #D1D5DB;
+    border-radius: 0.25rem;
+}
+
+/* Send Button */
+#private-chat-form button {
+    background-color: #4F46E5; /* Purple background, adjust as needed */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+#private-chat-form button:hover {
+    background-color: #4338CA; /* Darker shade for hover effect */
+}

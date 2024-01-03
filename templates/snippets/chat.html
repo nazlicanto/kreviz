@@ -1,0 +1,96 @@
+
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!-- CSS elements -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+        <link href="{% static 'css/main.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/chat.css' %}" rel="stylesheet">
+    </head>
+
+
+
+    <body 
+    
+    class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <body data-room-name="{{ room_name }}">
+            
+        <div class="flex flex-row min-h-screen">
+            <!-- Side Panel -->
+            <div class="side-panel">
+                <div class="mb-4">
+                    <h2 class="text-xl font-semibold text-white">Profile</h2> 
+                </div>
+                <div class="mb-4">
+                    <h2 class="text-xl font-semibold text-white">Band Members</h2>
+                    <ul class="list-none">
+                        {% for member in members %}
+                        <li class="p-2 hover:bg-green-600 text-white">
+                            <a href="#" class="username" data-username="{{ member.username }}">{{ member.username }}</a>
+                        </li>
+                        <!--- li class="p-2 hover:bg-green-600 text-white">{{ member.username }}</li> -->
+                            
+                        {% empty %}
+                        <li class="p-2 text-white">No members found.</li>
+                        {% endfor %}
+                        
+                    </ul>
+                    <div>
+                        <!-- Assume each username is wrapped in a span with a class 'username' -->
+                        <span class="username" onclick="openChatBubble('{{ member.username }}')">
+                            {{ message.user.username }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        
+            
+            
+        <!-- Main Chat Area -->
+        <div class="main-chat-area">
+            <div class="chat-log-container">
+                <div id="chat-log">
+                    {% for message in messages %}
+                        <div>
+                            <strong>
+                                <a href="#" class="username">{{ message.user.username }}</a>
+                            </strong>: {{ message.message }}
+                            <br>
+                            <small>{{ message.timestamp }}</small>
+                        </div>
+                    {% empty %}
+                        <p>No messages in the chat yet.</p>
+                    {% endfor %}
+                </div>                
+            </div>
+        
+
+
+
+            <div class="input-area">
+                <div class="input-flex">
+                    <input id="chat-message-input" type="text" class="chat-input" placeholder="Type your message...">
+                    <button id="chat-message-submit" class="send-button">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i> Send
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% include 'snippets/bubble.html' %}
+
+
+<script src="{% static 'js/chat.js' %}"></script> 
+<script src="{% static 'js/bubble.js' %}"></script> 
+
+</body>
+    </html>
+
+
+
+

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Chat</title>
+    <link href="{% static 'css/private.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div id="sidebar" class="sidebar">
+        <!-- Kullanıcı listesi burada yer alacak -->
+        {% for match in matches %}
+            <div class="user" data-username="{{ match.user.username }}">
+                {{ match.user.username }}
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="private-chat-container" class="chat-container hidden">
+        <div class="chat-header">
+            <span id="chat-username"></span>
+            <button id="close-chat" class="close-btn">&times;</button>
+        </div>
+
+        <div id="chat-messages" class="chat-messages">
+            <!-- Mesajlar burada görüntülenecek -->
+        </div>
+
+        <form id="message-form" class="message-form">
+            <input type="text" id="message-input" placeholder="Type a message...">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    // Veriyi JavaScript değişkeni olarak tanımla
+    var initialMessagesData = {{ private_chats_messages_json|safe }};
+</script>
+<script src="{% static 'js/private.js' %}"></script>

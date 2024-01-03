@@ -1,0 +1,109 @@
+/* Example CSS for .side-panel class */
+.side-panel {
+    background-color: #003d24; /* This corresponds to a dark green color, similar to bg-green-900 in Tailwind */
+    width: 25%; /* This is equivalent to w-1/4 in Tailwind */
+    padding: 1rem; /* This corresponds to p-4 in Tailwind */
+}
+
+.side-panel h2 {
+    margin-bottom: 1rem; /* This corresponds to mb-4 in Tailwind */
+    font-size: 1.25rem; /* This corresponds to text-xl in Tailwind */
+    font-weight: 600; /* This corresponds to font-semibold in Tailwind */
+    color: white; /* This corresponds to text-white in Tailwind */
+}
+
+.side-panel ul {
+    list-style-type: none; /* This corresponds to list-none in Tailwind */
+}
+
+.side-panel li {
+    padding: 0.5rem; /* This corresponds to p-2 in Tailwind */
+    color: white; /* This corresponds to text-white in Tailwind */
+}
+
+.side-panel li:hover {
+    background-color: #003d24; /* This corresponds to a green color, similar to hover:bg-green-600 in Tailwind */
+}
+
+
+
+
+/* Main Chat Area */
+.main-chat-area {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: rgb(242, 255, 245); 
+}
+
+/* Chat Log Container */
+.chat-log-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem; /* Equivalent to p-4 */
+}
+
+/* Individual Chat Message */
+.chat-message {
+    margin-bottom: 1rem; /* Add space between messages */
+}
+
+.chat-message strong {
+    font-weight: bold;
+}
+
+.chat-message small {
+    display: block;
+    color: #6B7280; /* A gray color, adjust as needed */
+    font-size: 0.875rem; /* Small text size */
+}
+
+/* Empty Message */
+.no-messages {
+    padding: 1rem;
+}
+
+/* Input Area */
+.input-area {
+    margin-bottom: 1rem; /* Equivalent to mb-4 */
+    padding: 0.75rem; /* Equivalent to py-3 */
+    padding-left: 1rem; /* Equivalent to px-4 */
+    padding-right: 1rem;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind shadow-lg */
+}
+
+.input-area .input-flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Chat Input */
+.chat-input {
+    flex-grow: 1;
+    padding: 0.5rem; /* Equivalent to p-2 */
+    border: 1px solid #D1D5DB; /* Border color, equivalent to border-gray-300 */
+    border-radius: 0.25rem; /* Equivalent to rounded */
+    outline: none; /* Equivalent to focus:outline-none */
+}
+
+.chat-input:focus {
+    ring: 2px solid #60A5FA; /* Focus ring, equivalent to focus:ring-2 focus:ring-blue-500 */
+}
+
+/* Send Button */
+.send-button {
+    margin-left: 0.5rem; /* Equivalent to ml-2 */
+    background-color: #3B82F6; /* Equivalent to bg-blue-500 */
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* Equivalent to py-2 px-4 */
+    border-radius: 0.25rem; /* Equivalent to rounded */
+}
+
+.send-button:hover {
+    background-color: #1D4ED8; /* Equivalent to hover:bg-blue-700 */
+}
+
+
+

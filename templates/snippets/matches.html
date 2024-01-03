@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h2>Your Matches</h2>
+<ul>
+
+    {% for match in matches %}
+    <p> 
+        <a href="{% url 'view_profile' username=match.user.username %}">
+            {{ match.user.username }}
+
+        </a> 
+
+        {% for interest in match.shared_interests %}
+            {{ interest.name }}
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    {% empty %}
+    <p>No matches found.</p>
+    {% endfor %}
+
+
+</ul>
+{% endblock %}

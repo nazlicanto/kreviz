@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}  
+{% load static %}
+
+{% block content %}
+<style>
+    body {
+
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+    }
+
+    .welcome-message {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        color: black;  /* text color */
+    }
+
+    .auth-links a {
+        color: #4CAF50;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .auth-links a:hover {
+        color: #45a049;
+    }
+    
+</style>
+
+<div class="welcome-message">
+    <h1>kreviz</h1>
+    <p>this is a platform where you can meet and chat with people sharing similar interests.</p>
+
+    {% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! 
+       <a href="{% url 'manage_interests' %}">Manage your interests</a> |
+       <a href="{% url 'user_interests' %}">View your interest chat rooms</a>
+    </p>
+    {% else %}
+        <div class="auth-links">
+            <a href="{% url 'login' %}">Log in</a> or 
+            <a href="{% url 'register' %}">Register</a> to start chatting!
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+

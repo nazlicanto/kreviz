@@ -1,0 +1,14 @@
+<!-- snippets/user_interests.html -->
+
+{% extends 'core/base.html' %}  <!-- Replace 'base.html' with your base template if different -->
+
+{% block content %}
+<h1>Your Interests</h1>
+<ul>
+    {% for interest in interests %}
+    <li><a href="{% url 'chat_room_by_interest' interest.name %}">{{ interest.name }}</a></li>
+    {% empty %}
+    <li>You have not selected any interests.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

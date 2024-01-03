@@ -1,0 +1,14 @@
+{% extends 'base.html' %}  
+
+{% block content %}
+<h1>Welcome to the Chat App</h1>
+<p>This is a platform where you can meet and chat with people sharing similar interests.</p>
+
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}! <a href="{% url 'manage-interests' %}">Manage your interests</a> or <a href="{% url 'profile' %}">visit your profile</a>.</p>
+    <!-- Add more links as necessary -->
+{% else %}
+    <p><a href="{% url 'login' %}">Log in</a> or <a href="{% url 'register' %}">register</a> to start chatting!</p>
+{% endif %}
+
+{% endblock %}
